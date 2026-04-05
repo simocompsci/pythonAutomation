@@ -1,7 +1,7 @@
 import logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s -')
-logging.debug('Start of program')
 
+logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG,
+format=' %(asctime)s - %(levelname)s - %(message)s')
 
 def factorial(n):
     logging.debug('Start of factorial(' + str(n) + ')')
