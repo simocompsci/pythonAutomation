@@ -110,8 +110,19 @@ BLACK_SQUARE = " "
 def print_chessboard(board):
     squares = []
     is_white_square = True
-    for y in '87654321':
-        for x in 'abcdefgh':
+    for y in "87654321":
+        for x in "abcdefgh":
             print(x, y, is_white_square)
+            if x + y in board.keys():
+                squares.append(board[x + y])
+            else:
+                if is_white_square:
+                    squares.append(WHITE_SQUARE)
+                else:
+                    squares.append(BLACK_SQUARE)
+            is_white_square = not is_white_square
+    is_white_square = not is_white_square
+    print(BOARD_TEMPLATE.format(*squares))
+
 
 print_chessboard(BOARD_TEMPLATE)
