@@ -26,3 +26,12 @@ print(mo.group(2))
 # If you want to detect these characters as part of your text pattern, you
 # need to escape them with a backslash:
 # \# \$ \& \( \) \* \+ \- \. \? \[ \\ \] \^ \{ \| \} \~
+
+
+# Matching Characters from Alternate Groups
+# we use the pipe operator to represent the 'or' in the regex eg: 'Cat|Dog'
+
+pattern = re.compile(r'Cat(erpillar|astrophe|ch|egory)')
+match = pattern.search('Catch me if you can !! ')
+print(match.group())
+print(match.group(1))
