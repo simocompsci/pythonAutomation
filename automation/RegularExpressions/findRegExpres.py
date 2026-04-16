@@ -35,3 +35,21 @@ pattern = re.compile(r'Cat(erpillar|astrophe|ch|egory)')
 match = pattern.search('Catch me if you can !! ')
 print(match.group())
 print(match.group(1))
+
+
+# In addition to a search() method, Pattern objects have a findall() method.
+# While search() will return a Match object of the first matched text in the
+# searched string, the findall() method will return the strings of every match
+# in the searched string.
+# There is one detail you need to keep in mind when using findall(). The
+# method returns a list of strings as long as there are no groups in the regular
+# expression
+
+
+pattern = re.compile(r'\d{3}-\d{3}-\d{4}') # This regex has no groups.
+print(pattern.findall('Cell: 415-555-9999 Work: 212-555-0000'))
+
+# If there are groups in the regular expression, then findall() will return
+# a list of tuples. Each tuple represents a single match, and the tuple has
+# strings for each group in the regex.
+
