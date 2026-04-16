@@ -53,3 +53,14 @@ print(pattern.findall('Cell: 415-555-9999 Work: 212-555-0000'))
 # a list of tuples. Each tuple represents a single match, and the tuple has
 # strings for each group in the regex.
 
+
+pattern = re.compile(r'(\d{3})-(\d{3})-(\d{4})') # This regex has groups.
+print(pattern.findall('Cell: 415-555-9999 Work: 212-555-0000'))
+
+
+# Regular expressions are split into two parts: the qualifiers that dictate what
+# characters you are trying to match followed by the quantifiers that dictate
+# how many characters you are trying to match. In the r'\d{3}-\d{3}-\d{4}'
+# phone number regex string example we’ve been using, the r'\d' and '-'
+# parts are qualifiers and the '{3}' and '{4}' are quantifiers. Let’s now exam-
+# ine the syntax of qualifiers.
