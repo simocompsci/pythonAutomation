@@ -64,3 +64,24 @@ print(pattern.findall('Cell: 415-555-9999 Work: 212-555-0000'))
 # phone number regex string example we’ve been using, the r'\d' and '-'
 # parts are qualifiers and the '{3}' and '{4}' are quantifiers. Let’s now exam-
 # ine the syntax of qualifiers.
+
+
+vowel_pattern = re.compile(r'[aeiouAEIOU]') # this is called a character class that will match any voyel
+print(vowel_pattern.findall('RoboCop eats BABY FOOD.'))
+
+
+consonant_pattern = re.compile(r'[^aeiouAEIOU]') # this is a negative character class
+print(consonant_pattern.findall('RoboCop eats BABY FOOD.'))
+
+# In the earlier phone number regex example, you learned that \d could
+# stand for any numeric digit. That is, \d is shorthand for the regular
+# expression 0|1|2|3|4|5|6|7|8|9 or [0-9]. There are many such shorthand char-
+# acter classes, as shown in Table 9-1 page(193).
+
+
+# The regular expression \d+\s\w+ will match text that has one or more
+# numeric digits (\d+), followed by a whitespace character (\s), followed by
+# one or more letter/digit/underscore characters (\w+).
+
+pattern = re.compile(r'\d+\s\w+')
+print(pattern.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7 swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge'))
